@@ -1,5 +1,6 @@
 package org.aboylan.prog.funcional.v2superfuncionesClases;
 
+import org.aboylan.prog.funcional.v2superfuncionesClases.interfaces.Funcion;
 import org.aboylan.prog.funcional.v2superfuncionesClases.interfaces.Predicado;
 import org.aboylan.prog.funcional.v2superfuncionesClases.interfaces.Proveedor;
 
@@ -25,4 +26,13 @@ public class SuperFunciones {
         }
         return resultado;
     }
+
+    public static List<Integer> transformar(List<Integer> valores, Funcion funcion) {
+        List<Integer> resultado = new ArrayList<Integer>();
+        for (Integer valor : valores) {
+            resultado.add(funcion.aplicar(valor));
+        }
+        return resultado;
+    }
+
 }
