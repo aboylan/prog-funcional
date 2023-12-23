@@ -1,5 +1,7 @@
 package org.aboylan.prog.funcional.v2superfuncionesClases;
 
+import org.aboylan.prog.funcional.v2superfuncionesClases.clases.Aleatorio;
+import org.aboylan.prog.funcional.v2superfuncionesClases.clases.Naturales;
 import org.aboylan.prog.funcional.v2superfuncionesClases.clases.SoloImpares;
 import org.aboylan.prog.funcional.v2superfuncionesClases.clases.SoloPares;
 
@@ -13,13 +15,13 @@ public class Main {
 
     public Main() {
         // 1.- Crear lista de elemento
-        List<Integer> numeros = crearLista();
+        List<Integer> numeros = SuperFunciones.proveer(10, new Naturales());
         System.out.println(numeros);
         // 2.- Quedarme solo con los pares
-        List<Integer> filtrados = SuperFunciones.filtrar(numeros, new SoloImpares());
+        List<Integer> filtrados = SuperFunciones.filtrar(numeros, new SoloPares());
         System.out.println(filtrados);
         // 3.- Pasar cada numero al cuadrado
-        List<Integer> cuadrados = elevarAlCuadrado(pares);
+        List<Integer> cuadrados = elevarAlCuadrado(filtrados);
         System.out.println(cuadrados);
         // 4.- Mostrar cada cuadrado por pantalla
         List<Integer> mostrados =  mostrarLista(cuadrados);

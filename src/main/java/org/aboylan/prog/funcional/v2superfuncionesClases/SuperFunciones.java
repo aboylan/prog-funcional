@@ -1,6 +1,7 @@
 package org.aboylan.prog.funcional.v2superfuncionesClases;
 
 import org.aboylan.prog.funcional.v2superfuncionesClases.interfaces.Predicado;
+import org.aboylan.prog.funcional.v2superfuncionesClases.interfaces.Proveedor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,4 +18,11 @@ public class SuperFunciones {
         return resultado;
     }
 
+    public static List<Integer> proveer(int size, Proveedor proveedor) {
+        List<Integer> resultado = new ArrayList<Integer>();
+        for (int i=0; i < size; i++) {
+            resultado.add(proveedor.obtener());
+        }
+        return resultado;
+    }
 }
