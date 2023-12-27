@@ -18,12 +18,14 @@ public class Main {
         List<Integer> filtrados = SuperFunciones.filtrar(numeros, new SoloPares());
         System.out.println(filtrados);
         // 3.- Obtener el cuadrado de cada numero
-        List<Integer> cuadrados = SuperFunciones.transformar(filtrados, new AlCubo());
-        System.out.println(cuadrados);
-        // 4.- Mostrar cada cuadrado por pantalla
-        List<Integer> mostrados =  mostrarLista(cuadrados);
+        List<Integer> transformados = SuperFunciones.transformar(filtrados, new AlCubo());
+        System.out.println(transformados);
+        // 4a.- Mostrar cada cuadrado por pantalla y retornar lista
+        List<Integer> actuados =  SuperFunciones.actuar(transformados, new Impresor());
+        // 4b.- Mostrar cada cuadrado por pantalla y no retornar nada
+        SuperFunciones.consumir(transformados, new Impresor());
         // 5.- Obtener la suma de los cuadrados
-        int total = sumarLista(mostrados);
+        int total = sumarLista(actuados);
         System.out.println("Suma de cuadrados: " + total);
     }
 
